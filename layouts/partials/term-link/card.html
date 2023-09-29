@@ -40,15 +40,17 @@
     </span>
     {{ end }}
 
-    <div class="px-6 py-4">
+    <div class="px-6 py-4 hover:underline hover:underline-offset-2">
 
       <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+        class="font-bold text-xl text-neutral-800 decoration-primary-500  dark:text-neutral"
       >{{ .Page.Title | emojify }}</div>
 
     </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
+    {{ if .Page.Description }}
+        <div class="p-4 m-2  prose dark:prose-invert lg:flex-row">
+          {{ .Page.Description }}
+        </div>
+    {{end}}
+</div>
 </a>
